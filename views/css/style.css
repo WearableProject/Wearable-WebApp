@@ -20,6 +20,11 @@ div.leftCol {
   border-right:2px solid #EFEFEF;
 }
 
+button.btn-padded, a.btn-padded {
+  padding:17px 45px 17px 45px;
+  margin:5px;
+}
+
 span.glyphicon {
     font-size: 3em;
 }
