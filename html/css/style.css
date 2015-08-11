@@ -5,6 +5,11 @@ background: #F3F3F3
 div.white {
 background:#fff;
 padding:10px;
+box-shadow: 1px 1px 1px 1px #888888;
+}
+
+div.white a:hover, div.white :hover {
+  box-shadow: 0px;
 }
 
 div.leftCol {
@@ -13,4 +18,12 @@ div.leftCol {
   padding:20px;
   margin:0px;
   border-right:2px solid #EFEFEF;
+}
+
+span.glyphicon {
+    font-size: 3em;
+}
+
+.nomargin {
+  margin:0;
 }
