@@ -12,12 +12,17 @@ div.white a:hover, div.white :hover {
   box-shadow: 0px;
 }
 
-div.leftCol {
+div.leftCol, .emulator {
   background:#FFF;
   width:300px;
   padding:20px;
   margin:0px;
+  margin-right:20px;
   border-right:2px solid #EFEFEF;
+}
+
+div.container, div.jumbotron {
+  height:100%;
 }
 
 button.btn-padded, a.btn-padded {
@@ -31,4 +36,9 @@ span.glyphicon {
 
 .nomargin {
   margin:0;
+}
+
+.codeEditor {
+  width:98%;
+  height:92%;
 }
