@@ -4,6 +4,8 @@
   <title>BlocklyDuino</title>
   <script type="text/javascript" src="../../blockly_compressed.js"></script>
   <script type="text/javascript" src="../../blocks_compressed.js"></script>
+  <script type="text/javascript" src="../../blocks/pearl.js"></script>
+  <script type="text/javascript" src="../../generators/arduino/pearl.js"></script>
   <script type="text/javascript" src="../../arduino_compressed.js"></script>
   <script type="text/javascript" src="../../msg/js/en.js"></script>
   <script type="text/javascript" src="Blob.js"></script>
@@ -411,8 +413,8 @@ function init() {
     </category>
     <category name="Adaband">
       <category name="Pearl">
-        <block type="pearl_change"></block>
-        <block type="pearl_off"></block>
+        <block type="set_brightness"></block>
+        <block type="set_pixel_text_colour"></block>
       </category>
       <category name="Display">
         <block type="pearl"></block>
