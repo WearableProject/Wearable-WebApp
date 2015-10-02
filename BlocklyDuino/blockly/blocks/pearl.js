@@ -63,23 +63,6 @@ Blockly.Blocks['set_pixel_text_colour'] = {
   }
 };
 
-Blockly.Blocks['set_pixel_text_colour'] = {
-  helpUrl: 'http://github.com/wearableproject',
-  init: function() {
-    var value = new Blockly.FieldTextInput('0');
-    var text_colours = new Blockly.FieldDropdown([['off',[0,0,0]],['red',[255,0,0]], ['green',[0,255,0]],
-                                                  ['blue',[0,0,255]], ['yellow',[255,255,0]],
-                                                  ['pink',[255,182,193]], ['orange',[255,165,0]],
-                                                  ['purple',[255,0,255]]]);
-    this.setColour(250);
-    this.appendDummyInput().appendField('Set pixel')
-    .appendField(new Blockly.FieldTextInput('0', Blockly.FieldTextInput.numberValidator), 'PIXEL')
-    .appendField('to colour').appendField(text_colours, 'COLOUR');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-  }
-};
-
 Blockly.Blocks['set_pixel_rgb'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
