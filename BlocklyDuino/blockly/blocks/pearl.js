@@ -73,7 +73,7 @@ Blockly.Blocks['set_pixel_text_colour'] = {
                                                   ['purple',[255,0,255]]]);
     this.setColour(250);
     this.appendDummyInput().appendField('Set pixel')
-    .appendField(new Blockly.FieldTextInput('1'), 'PIXEL')
+    .appendField(new Blockly.FieldTextInput('0', Blockly.FieldTextInput.numberValidator), 'PIXEL')
     .appendField('to colour').appendField(text_colours, 'COLOUR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
