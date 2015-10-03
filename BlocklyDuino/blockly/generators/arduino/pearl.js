@@ -45,3 +45,13 @@ Blockly.Arduino.set_pixel_colour = function() {
   code +="pearl.update();\n";
   return code;
 };
+
+Blockly.Arduino.set_all_text_colour = function() {
+  var pixelVal = parseInt(this.getFieldValue("PIXEL"));
+  var colorVal = this.getFieldValue("COLOUR");
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeAll(CRGB("+colorVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
