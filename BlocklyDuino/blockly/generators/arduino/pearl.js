@@ -74,3 +74,65 @@ Blockly.Arduino.set_all_colour = function() {
   code +="pearl.update();\n";
   return code;
 };
+
+Blockly.Arduino.set_row_text_colour = function() {
+  var rowVal = parseInt(this.getFieldValue("ROW"));
+  var colorVal = this.getFieldValue("COLOUR");
+  var ledString = "";
+  switch(rowVal)
+  {
+    case 1:
+    ledString = "{0,1,5}"
+    break;
+    case 2:
+    ledString = "{2,3,4}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+", CRGB("+colorVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_row_rgb = function() {
+  var rowVal = parseInt(this.getFieldValue("ROW"));
+  var redVal = this.getFieldValue("RED");
+  var greenVal = this.getFieldValue("GREEN");
+  var blueVal = this.getFieldValue("BLUE");
+  var ledString = "";
+  switch(rowVal)
+  {
+    case 1:
+    ledString = "{0,1,5}"
+    break;
+    case 2:
+    ledString = "{2,3,4}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+",CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_row_colour = function() {
+  var rowVal = parseInt(this.getFieldValue("ROW"));
+  var hexVal = this.getFieldValue("RGB");
+  var ledString = "";
+  switch(rowVal)
+  {
+    case 1:
+    ledString = "{0,1,5}"
+    break;
+    case 2:
+    ledString = "{2,3,4}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+", CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};

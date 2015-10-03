@@ -122,7 +122,7 @@ Blockly.Blocks['set_all_colour'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set all to colour').appendField(new Blockly.FieldColour(), 'RGB');
+    this.appendDummyInput().appendField('Set all to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
@@ -165,7 +165,7 @@ Blockly.Blocks['set_row_colour'] = {
     this.setColour(250);
     this.appendDummyInput().appendField('Set row')
     .appendField(new Blockly.FieldTextInput('0'), 'ROW')
-    .appendField('to colour').appendField(new Blockly.FieldColour(), 'RGB');
+    .appendField('to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
@@ -208,7 +208,7 @@ Blockly.Blocks['set_column_colour'] = {
     this.setColour(250);
     this.appendDummyInput().appendField('Set column')
     .appendField(new Blockly.FieldTextInput('0'), 'COL')
-    .appendField('to colour').appendField(new Blockly.FieldColour(), 'RGB');
+    .appendField('to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
