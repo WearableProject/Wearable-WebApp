@@ -47,11 +47,30 @@ Blockly.Arduino.set_pixel_colour = function() {
 };
 
 Blockly.Arduino.set_all_text_colour = function() {
-  var pixelVal = parseInt(this.getFieldValue("PIXEL"));
   var colorVal = this.getFieldValue("COLOUR");
   Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeAll(CRGB("+colorVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_all_rgb = function() {
+  var redVal = this.getFieldValue("RED");
+  var greenVal = this.getFieldValue("GREEN");
+  var blueVal = this.getFieldValue("BLUE");
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeAll(CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_all_colour = function() {
+  var hexVal = this.getFieldValue("RGB");
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeAll(CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
   code +="pearl.update();\n";
   return code;
 };
