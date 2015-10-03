@@ -33,48 +33,66 @@
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks['update_sensor'] = {
+Blockly.Blocks['update_sense'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    this.setColour(0);
-    this.appendDummyInput().appendField('update motion sensors');
+    this.setColour(176);
+    this.appendDummyInput().appendField('update sense sensors');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
 };
 
-Blockly.Blocks['x_output'] = {
+Blockly.Blocks['lightlevel'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    this.setColour(0);
-    this.appendDummyInput().appendField("X value");
+    this.setColour(176);
+    this.appendDummyInput().appendField("light");
     this.setOutput(true, 'Number');
   }
 };
 
-Blockly.Blocks['y_output'] = {
+Blockly.Blocks['humidity'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    this.setColour(0);
-    this.appendDummyInput().appendField("Y value");
+    this.setColour(176);
+    this.appendDummyInput().appendField("humidity");
     this.setOutput(true, 'Number');
   }
 };
 
-Blockly.Blocks['z_output'] = {
+Blockly.Blocks['temp_c'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    this.setColour(0);
-    this.appendDummyInput().appendField("Z value");
+    this.setColour(176);
+    this.appendDummyInput().appendField("temperature (C)");
     this.setOutput(true, 'Number');
   }
 };
 
-Blockly.Blocks['vector_output'] = {
+Blockly.Blocks['temp_f'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    this.setColour(0);
-    this.appendDummyInput().appendField("(X,Y,Z) value");
-    this.setOutput(true, 'Array');
+    this.setColour(176);
+    this.appendDummyInput().appendField("temperature (F)");
+    this.setOutput(true, 'Number');
+  }
+};
+
+Blockly.Blocks['temp_k'] = {
+  helpUrl: 'http://github.com/wearableproject',
+  init: function() {
+    this.setColour(176);
+    this.appendDummyInput().appendField("temperature (K)");
+    this.setOutput(true, 'Number');
+  }
+};
+
+Blockly.Blocks['dewpoint'] = {
+  helpUrl: 'http://github.com/wearableproject',
+  init: function() {
+    this.setColour(176);
+    this.appendDummyInput().appendField("dewpoint");
+    this.setOutput(true, 'Number');
   }
 };
