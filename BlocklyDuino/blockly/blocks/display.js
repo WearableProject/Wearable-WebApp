@@ -64,7 +64,7 @@ Blockly.Blocks['scroll_directions'] = {
     this.appendDummyInput().appendField('Scroll')
     .appendField(new Blockly.FieldTextInput("hello, world"), 'TEXT')
     .appendField(dropdownField, 'DIRECTION').appendField('speed');
-    this.appendValueInput('SPEED', 'Number');
+    this.appendValueInput('SPEED', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setInputsInline(true);
@@ -81,7 +81,7 @@ Blockly.Blocks['scroll_value_directions'] = {
     this.appendDummyInput().appendField('Scroll');
     this.appendValueInput('TEXT');
     this.appendDummyInput().appendField(dropdownField, 'DIRECTION').appendField('speed');
-    this.appendValueInput('SPEED', 'Number');
+    this.appendValueInput('SPEED', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setInputsInline(true);
@@ -98,10 +98,10 @@ Blockly.Blocks['scroll_directions_continuous'] = {
     this.appendDummyInput().appendField('Scroll')
     .appendField(new Blockly.FieldTextInput("hello, world"), 'TEXT')
     .appendField(dropdownField, 'DIRECTION').appendField('speed');
-    this.appendValueInput('SPEED', 'Number');
+    this.appendValueInput('SPEED', 'Number').setCheck('Number');
     this.appendDummyInput()
     .appendField('for');
-    this.appendValueInput('SECONDS','Number');
+    this.appendValueInput('SECONDS','Number').setCheck('Number');
     this.appendDummyInput().appendField('seconds');
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -119,7 +119,7 @@ Blockly.Blocks['scroll_value_directions_continuous'] = {
     this.appendDummyInput().appendField('Scroll');
     this.appendValueInput('TEXT');
     this.appendDummyInput().appendField(dropdownField, 'DIRECTION').appendField('speed');
-    this.appendValueInput('SPEED', 'Number');
+    this.appendValueInput('SPEED', 'Number').setCheck('Number');
     this.appendDummyInput().appendField('for');
     this.appendValueInput('SECONDS','Number').setCheck('Number');
     this.appendDummyInput().appendField('seconds');
