@@ -136,3 +136,74 @@ Blockly.Arduino.set_row_colour = function() {
   code +="pearl.update();\n";
   return code;
 };
+
+Blockly.Arduino.set_column_text_colour = function() {
+  var colVal = parseInt(this.getFieldValue("COL"));
+  var colorVal = this.getFieldValue("COLOUR");
+  var ledString = "";
+  switch(colVal)
+  {
+    case 1:
+    ledString = "{1,2}"
+    break;
+    case 2:
+    ledString = "{3,0}";
+    break;
+    case 3:
+    ledString = "{4,5}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+", CRGB("+colorVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_column_rgb = function() {
+  var colVal = parseInt(this.getFieldValue("COL"));
+  var redVal = this.getFieldValue("RED");
+  var greenVal = this.getFieldValue("GREEN");
+  var blueVal = this.getFieldValue("BLUE");
+  var ledString = "";
+  switch(colVal)
+  {
+    case 1:
+    ledString = "{1,2}"
+    break;
+    case 2:
+    ledString = "{3,0}";
+    break;
+    case 3:
+    ledString = "{4,5}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+",CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
+
+Blockly.Arduino.set_column_colour = function() {
+  var colVal = parseInt(this.getFieldValue("COL"));
+  var hexVal = this.getFieldValue("RGB");
+  var ledString = "";
+  switch(colVal)
+  {
+    case 1:
+    ledString = "{1,2}"
+    break;
+    case 2:
+    ledString = "{3,0}";
+    break;
+    case 3:
+    ledString = "{4,5}";
+    break;
+  }
+  Blockly.Arduino.definitions_['define_pearl'] = "Pearl pearl;\n";
+  Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
+  var code ="pearl.ChangeMultiple("+ledString+", CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
+  code +="pearl.update();\n";
+  return code;
+};
