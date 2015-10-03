@@ -62,28 +62,69 @@ Blockly.Blocks['scroll_directions'] = {
     var dropdownField = new Blockly.FieldDropdown(dropdown);
     this.setColour(222);
     this.appendDummyInput().appendField('Scroll')
-    .appendField(dropdownField, 'DIRECTION')
     .appendField(new Blockly.FieldTextInput("hello, world"), 'TEXT')
-    .appendField("Continuous?")
-    .appendField(new Blockly.FieldCheckbox("FALSE"), 'CONTINUOUS');
+    .appendField(dropdownField, 'DIRECTION').appendField('speed');
+    this.appendValueInput('SPEED', 'Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
 Blockly.Blocks['scroll_value_directions'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    var dropdown = [["left", "left"], ["right", "right"], ["up", "up"], ["down", "down"], ["horizontal","horizontal"],["vertical","vertical"]];
+    var dropdown = [["left", "Left"], ["right", "Right"], ["up", "Up"], ["down", "Down"], ["horizontal","Horizontally"],["vertical","Vertically"]];
+
+    var dropdownField = new Blockly.FieldDropdown(dropdown);
+    this.setColour(222);
+    this.appendDummyInput().appendField('Scroll');
+    this.appendValueInput('TEXT');
+    this.appendDummyInput().appendField(dropdownField, 'DIRECTION').appendField('speed');
+    this.appendValueInput('SPEED', 'Number');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['scroll_directions_continuous'] = {
+  helpUrl: 'http://github.com/wearableproject',
+  init: function() {
+    var dropdown = [["left", "Left"], ["right", "Right"], ["up", "Up"], ["down", "Down"], ["horizontal","Horizontally"],["vertical","Vertically"]];
 
     var dropdownField = new Blockly.FieldDropdown(dropdown);
     this.setColour(222);
     this.appendDummyInput().appendField('Scroll')
-    .appendField(dropdownField, 'DIRECTION').appendField('Text');
-    this.appendValueInput('TEXT');
-    this.appendDummyInput().appendField("Continuous?")
-    .appendField(new Blockly.FieldCheckbox("FALSE"), 'CONTINUOUS');
+    .appendField(new Blockly.FieldTextInput("hello, world"), 'TEXT')
+    .appendField(dropdownField, 'DIRECTION').appendField('speed');
+    this.appendValueInput('SPEED', 'Number');
+    this.appendDummyInput()
+    .appendField('for');
+    this.appendValueInput('SECONDS','Number');
+    this.appendDummyInput().appendField('seconds');
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+  }
+};
+
+Blockly.Blocks['scroll_value_directions_continuous'] = {
+  helpUrl: 'http://github.com/wearableproject',
+  init: function() {
+    var dropdown = [["left", "Left"], ["right", "Right"], ["up", "Up"], ["down", "Down"], ["horizontal","Horizontally"],["vertical","Vertically"]];
+
+    var dropdownField = new Blockly.FieldDropdown(dropdown);
+    this.setColour(222);
+    this.appendDummyInput().appendField('Scroll');
+    this.appendValueInput('TEXT');
+    this.appendDummyInput().appendField(dropdownField, 'DIRECTION').appendField('speed');
+    this.appendValueInput('SPEED', 'Number');
+    this.appendDummyInput().appendField('for');
+    this.appendValueInput('SECONDS','Number');
+    this.appendDummyInput().appendField('seconds');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
