@@ -57,7 +57,7 @@ Blockly.Blocks['show_value'] = {
 Blockly.Blocks['scroll_directions'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
-    var dropdown = [["left", "left"], ["right", "right"], ["up", "up"], ["down", "down"], ["horizontal","horizontal"],["vertical","vertical"]];
+    var dropdown = [["left", "Left"], ["right", "Right"], ["up", "Up"], ["down", "Down"], ["horizontal","Horizontally"],["vertical","Vertically"]];
 
     var dropdownField = new Blockly.FieldDropdown(dropdown);
     this.setColour(222);
