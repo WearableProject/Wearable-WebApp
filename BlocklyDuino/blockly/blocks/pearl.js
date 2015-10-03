@@ -85,7 +85,7 @@ Blockly.Blocks['set_pixel_colour'] = {
     this.appendDummyInput().appendField('Set pixel')
     .appendField(new Blockly.FieldTextInput('1'), 'PIXEL')
     .appendField('to colour:')
-    .appendField(new Blockly.FieldColour(), 'RGB');
+    .appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
   }
