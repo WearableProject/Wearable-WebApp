@@ -414,19 +414,125 @@ function init() {
     </category>
     <category name="Adaband">
       <category name="Pearl">
-        <block type="set_brightness"></block>
-        <block type="set_pixel_text_colour"></block>
-        <block type="set_pixel_rgb"></block>
-        <block type="set_pixel_colour"></block>
+        <block type="set_brightness">
+            <value name="NUMBER">
+              <block type="math_number">
+                <field name="NUM">40</field>
+              </block>
+            </value>
+        </block>
+        <block type="set_pixel_text_colour">
+          <value name="PIXEL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_pixel_rgb">
+          <value name="PIXEL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_pixel_colour">
+          <value name="PIXEL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
         <block type="set_all_text_colour"></block>
-        <block type="set_all_rgb"></block>
+        <block type="set_all_rgb">
+          <value name="RED">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="GREEN">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="BLUE">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
         <block type="set_all_colour"></block>
-        <block type="set_row_text_colour"></block>
-        <block type="set_row_rgb"></block>
-        <block type="set_row_colour"></block>
-        <block type="set_column_text_colour"></block>
-        <block type="set_column_rgb"></block>
-        <block type="set_column_colour"></block>
+        <block type="set_row_text_colour">
+          <value name="ROW">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_row_rgb">
+          <value name="ROW">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="RED">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="GREEN">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="BLUE">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_row_colour">
+          <value name="ROW">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_column_text_colour">
+          <value name="COL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value></block>
+        <block type="set_column_rgb">
+          <value name="COL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+
+          <value name="RED">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="GREEN">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <value name="BLUE">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+        <block type="set_column_colour">
+          <value name="COL">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
       </category>
       <category name="Display">
         <block type="show_string"></block>
