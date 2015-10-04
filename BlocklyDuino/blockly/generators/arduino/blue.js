@@ -23,6 +23,21 @@ Blockly.Arduino.bluetooth_read = function() {
   return code;
 };
 
+Blockly.Arduino.bluetooth_clear = function() {
+  Blockly.Arduino.definitions_['define_bluetooth_import'] = "#include <SoftwareSerial.h>\n SoftwareSerial BLE (2, 3);\n char* readBuffer;\n char* oldBuffer;";
+  Blockly.Arduino.setups_['ble_setup'] = "BLE.begin(9600);\n readBuffer = new char[1];";
+
+  var code =" readBuffer = new char[1]; \n oldBuffer = new char[1];";
+  return code;
+};
+
+Blockly.Arduino.bluetooth_output = function() {
+  Blockly.Arduino.definitions_['define_bluetooth_import'] = "#include <SoftwareSerial.h>\n SoftwareSerial BLE (2, 3);\n char* readBuffer;\n char* oldBuffer;";
+  Blockly.Arduino.setups_['ble_setup'] = "BLE.begin(9600);\n readBuffer = new char[1];";
+
+  var code ="readBuffer";
+  return [code | Blockly.Arduino.ORDER_ATOMIC];
+};
 Blockly.Arduino.bluetooth_write_text = function() {
   var value = this.getFieldValue("TEXT");
   Blockly.Arduino.definitions_['define_bluetooth_import'] = "#include <SoftwareSerial.h>\nSoftwareSerial BLE (2, 3);\nchar readIn;\n char* readBuffer;\n char* oldBuffer;";

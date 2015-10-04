@@ -43,6 +43,16 @@ Blockly.Blocks['bluetooth_read'] = {
   }
 };
 
+Blockly.Blocks['bluetooth_clear'] = {
+  helpUrl: 'http://github.com/wearableproject',
+  init: function() {
+    this.setColour(200);
+    this.appendDummyInput().appendField('clear bluetooth data');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+  }
+};
+
 Blockly.Blocks['bluetooth_output'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
