@@ -12,7 +12,8 @@ Blockly.Arduino.set_brightness = function() {
 };
 
 Blockly.Arduino.set_pixel_text_colour = function() {
-  var pixelVal = parseInt(this.getFieldValue("PIXEL"));
+  var text = Blockly.Arduino.valueToCode(this, 'PIXEL',
+      Blockly.Arduino.ORDER_UNARY_POSTFIX) || '0';
   var colorVal = this.getFieldValue("COLOUR");
   Blockly.Arduino.definitions_['define_pearl_import'] = "#include <Pearl.h>\n";
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";

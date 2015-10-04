@@ -39,10 +39,11 @@ Blockly.Blocks['set_brightness'] = {
   init: function() {
     var value = new Blockly.FieldTextInput('0');
     this.setColour(250);
-    this.appendDummyInput().appendField('Set brightness to')
-    .appendField(new Blockly.FieldTextInput('40'), 'NUMBER');
+    this.appendDummyInput().appendField('Set brightness to');
+    this.appendValueInput('NUMBER', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -55,11 +56,12 @@ Blockly.Blocks['set_pixel_text_colour'] = {
                                                   ['pink',[255,182,193]], ['orange',[255,165,0]],
                                                   ['purple',[255,0,255]]]);
     this.setColour(250);
-    this.appendDummyInput().appendField('Set pixel')
-    .appendField(new Blockly.FieldTextInput('1'), 'PIXEL')
-    .appendField('to colour').appendField(text_colours, 'COLOUR');
+    this.appendDummyInput().appendField('Set pixel');
+    this.appendValueInput('PIXEL', 'Number').setCheck('Number');
+    this.appendDummyInput().appendField('to colour').appendField(text_colours, 'COLOUR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -67,14 +69,16 @@ Blockly.Blocks['set_pixel_rgb'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set pixel')
-    .appendField(new Blockly.FieldTextInput('1'), 'PIXEL')
-    .appendField('to RGB:')
-    .appendField(new Blockly.FieldTextInput('0'), 'RED')
-    .appendField(new Blockly.FieldTextInput('0'), 'GREEN')
-    .appendField(new Blockly.FieldTextInput('0'), 'BLUE');
+    this.appendDummyInput().appendField('Set pixel');
+    this.appendValueInput('PIXEL', 'Number').setCheck('Number');
+    this.appendDummyInput()
+    .appendField('to RGB:');
+    this.appendValueInput('GREEN', 'Number').setCheck('Number');
+    this.appendValueInput('RED', 'Number').setCheck('Number');
+    this.appendValueInput('BLUE', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -82,12 +86,14 @@ Blockly.Blocks['set_pixel_colour'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set pixel')
-    .appendField(new Blockly.FieldTextInput('1'), 'PIXEL')
+    this.appendDummyInput().appendField('Set pixel');
+    this.appendValueInput('PIXEL', 'Number').setCheck('Number');
+    this.appendDummyInput()
     .appendField('to colour:')
     .appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -102,6 +108,7 @@ Blockly.Blocks['set_all_text_colour'] = {
     this.appendDummyInput().appendField('Set all to colour').appendField(text_colours, 'COLOUR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -109,12 +116,13 @@ Blockly.Blocks['set_all_rgb'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set all to RGB:')
-    .appendField(new Blockly.FieldTextInput('0'), 'RED')
-    .appendField(new Blockly.FieldTextInput('0'), 'GREEN')
-    .appendField(new Blockly.FieldTextInput('0'), 'BLUE');
+    this.appendDummyInput().appendField('Set all to RGB:');
+    this.appendValueInput('GREEN', 'Number').setCheck('Number');
+    this.appendValueInput('RED', 'Number').setCheck('Number');
+    this.appendValueInput('BLUE', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -125,6 +133,7 @@ Blockly.Blocks['set_all_colour'] = {
     this.appendDummyInput().appendField('Set all to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -136,11 +145,13 @@ Blockly.Blocks['set_row_text_colour'] = {
                                                   ['pink',[255,182,193]], ['orange',[255,165,0]],
                                                   ['purple',[255,0,255]]]);
     this.setColour(250);
-    this.appendDummyInput().appendField('Set row')
-    .appendField(new Blockly.FieldTextInput('0'), 'ROW')
+    this.appendDummyInput().appendField('Set row');
+    this.appendValueInput('ROW', 'Number').setCheck('Number');
+    this.appendDummyInput()
     .appendField('to colour').appendField(text_colours, 'COLOUR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -148,14 +159,16 @@ Blockly.Blocks['set_row_rgb'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set row')
-    .appendField(new Blockly.FieldTextInput('0'), 'ROW')
-    .appendField('to RGB:')
-    .appendField(new Blockly.FieldTextInput('0'), 'RED')
-    .appendField(new Blockly.FieldTextInput('0'), 'GREEN')
-    .appendField(new Blockly.FieldTextInput('0'), 'BLUE');
+    this.appendDummyInput().appendField('Set row');
+    this.appendValueInput('ROW', 'Number').setCheck('Number');
+    this.appendDummyInput()
+    .appendField('to RGB:');
+    this.appendValueInput('GREEN', 'Number').setCheck('Number');
+    this.appendValueInput('RED', 'Number').setCheck('Number');
+    this.appendValueInput('BLUE', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -163,11 +176,13 @@ Blockly.Blocks['set_row_colour'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set row')
-    .appendField(new Blockly.FieldTextInput('0'), 'ROW')
+    this.appendDummyInput().appendField('Set row');
+    this.appendValueInput('ROW', 'Number').setCheck('Number');
+    this.appendDummyInput()
     .appendField('to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -179,11 +194,13 @@ Blockly.Blocks['set_column_text_colour'] = {
                                                   ['pink',[255,182,193]], ['orange',[255,165,0]],
                                                   ['purple',[255,0,255]]]);
     this.setColour(250);
-    this.appendDummyInput().appendField('Set column')
-    .appendField(new Blockly.FieldTextInput('0'), 'COL')
+    this.appendDummyInput().appendField('set column');
+    this.appendValueInput('COL', 'Number').setCheck('Number');
+    this.appendDummyInput()
     .appendField('to colour').appendField(text_colours, 'COLOUR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -191,14 +208,16 @@ Blockly.Blocks['set_column_rgb'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set column')
-    .appendField(new Blockly.FieldTextInput('0'), 'COL')
-    .appendField('to RGB:')
-    .appendField(new Blockly.FieldTextInput('0'), 'RED')
-    .appendField(new Blockly.FieldTextInput('0'), 'GREEN')
-    .appendField(new Blockly.FieldTextInput('0'), 'BLUE');
+    this.appendDummyInput().appendField('Set column');
+    this.appendValueInput('COL', 'Number').setCheck('Number');
+    this.appendDummyInput()
+    .appendField('to RGB:');
+    this.appendValueInput('GREEN', 'Number').setCheck('Number');
+    this.appendValueInput('RED', 'Number').setCheck('Number');
+    this.appendValueInput('BLUE', 'Number').setCheck('Number');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };
 
@@ -206,10 +225,12 @@ Blockly.Blocks['set_column_colour'] = {
   helpUrl: 'http://github.com/wearableproject',
   init: function() {
     this.setColour(250);
-    this.appendDummyInput().appendField('Set column')
-    .appendField(new Blockly.FieldTextInput('0'), 'COL')
+    this.appendDummyInput().appendField('Set column');
+    this.appendValueInput('COL', 'Number').setCheck('Number');
+    this.appendDummyInput()
     .appendField('to colour').appendField(new Blockly.FieldColour('#ffffff'), 'RGB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setInputsInline(true);
   }
 };

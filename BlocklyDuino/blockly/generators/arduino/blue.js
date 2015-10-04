@@ -19,7 +19,8 @@ Blockly.Arduino.bluetooth_read = function() {
   code += "     readBuffer = oldBuffer;\n";
   code += "     readBuffer++;\n";
   code += "     readBuffer = BLE.read();\n";
-  code += "  }";
+  code += "  }\n";
+  code += "}\n";
   return code;
 };
 
@@ -36,7 +37,7 @@ Blockly.Arduino.bluetooth_output = function() {
   Blockly.Arduino.setups_['ble_setup'] = "BLE.begin(9600);\n readBuffer = new char[1];";
 
   var code ="readBuffer";
-  return [code | Blockly.Arduino.ORDER_ATOMIC];
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino.bluetooth_write_text = function() {
   var value = this.getFieldValue("TEXT");
