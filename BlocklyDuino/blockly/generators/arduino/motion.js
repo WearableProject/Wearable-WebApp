@@ -1,7 +1,7 @@
 goog.require('Blockly.Arduino');
 
 Blockly.Arduino.update_sensor = function() {
-  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n";
+  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n#include <MMA7660.h>";
   Blockly.Arduino.definitions_['define_motion_var'] = "Motion motion;\n";
   Blockly.Arduino.setups_['setup_motion'] = "motion = Motion();\n motion.init();\n";
   var code = "motion.update();\n";
@@ -10,7 +10,7 @@ Blockly.Arduino.update_sensor = function() {
 
 
 Blockly.Arduino.x_output = function() {
-  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n";
+  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n#include <MMA7660.h>";
   Blockly.Arduino.definitions_['define_motion_var'] = "Motion motion;\n";
   Blockly.Arduino.setups_['setup_motion'] = "motion = Motion();\n motion.init();\n";
   var code = "motion.getX()";
@@ -18,7 +18,7 @@ Blockly.Arduino.x_output = function() {
 };
 
 Blockly.Arduino.y_output = function() {
-  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n";
+  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n#include <MMA7660.h>";
   Blockly.Arduino.definitions_['define_motion_var'] = "Motion motion;\n";
   Blockly.Arduino.setups_['setup_motion'] = "motion = Motion();\n motion.init();\n";
   var code = "motion.getY()";
@@ -26,7 +26,7 @@ Blockly.Arduino.y_output = function() {
 };
 
 Blockly.Arduino.z_output = function() {
-  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n";
+  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n#include <MMA7660.h>";
   Blockly.Arduino.definitions_['define_motion_var'] = "Motion motion;\n";
   Blockly.Arduino.setups_['setup_motion'] = "motion = Motion();\n motion.init();\n";
   var code = "motion.getZ()";
@@ -34,7 +34,7 @@ Blockly.Arduino.z_output = function() {
 };
 
 Blockly.Arduino.vector_output = function() {
-  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n";
+  Blockly.Arduino.definitions_['define_motion_import'] = "#include <Motion.h>\n#include <MMA7660.h>";
   Blockly.Arduino.definitions_['define_motion_var'] = "Motion motion;\n";
   Blockly.Arduino.setups_['setup_motion'] = "motion = Motion();\n motion.init();\n";
   var code = "motion.getVector()";
