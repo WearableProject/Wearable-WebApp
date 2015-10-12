@@ -20,7 +20,7 @@ Blockly.Arduino.set_pixel_text_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.Change("+pixelVal+", CRGB("+colorVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -37,7 +37,7 @@ Blockly.Arduino.set_pixel_rgb = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.Change("+pixelVal+", CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 function hexToR(h) {return parseInt((cutHex(h)).substring(0,2),16)}
@@ -53,7 +53,7 @@ Blockly.Arduino.set_pixel_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.Change("+pixelVal+", CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -63,7 +63,7 @@ Blockly.Arduino.set_all_text_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeAll(CRGB("+colorVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -78,7 +78,7 @@ Blockly.Arduino.set_all_rgb = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeAll(CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -88,7 +88,7 @@ Blockly.Arduino.set_all_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeAll(CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -110,7 +110,7 @@ Blockly.Arduino.set_row_text_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+", CRGB("+colorVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -137,7 +137,7 @@ Blockly.Arduino.set_row_rgb = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+",CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -159,7 +159,7 @@ Blockly.Arduino.set_row_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+", CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -184,7 +184,7 @@ Blockly.Arduino.set_column_text_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+", CRGB("+colorVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -214,7 +214,7 @@ Blockly.Arduino.set_column_rgb = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+",CRGB("+redVal+","+greenVal+","+blueVal+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
 
@@ -238,6 +238,6 @@ Blockly.Arduino.set_column_colour = function() {
   Blockly.Arduino.definitions_['define_pearl_var'] = "Pearl pearl;\n";
   Blockly.Arduino.setups_['setup_pearl'] = "pearl = Pearl();\n";
   var code ="pearl.ChangeMultiple("+ledString+", CRGB("+hexToR(hexVal)+","+hexToG(hexVal)+","+hexToB(hexVal)+"));\n";
-  code +="pearl.update();\n";
+  code +="pearl.show();\n";
   return code;
 };
