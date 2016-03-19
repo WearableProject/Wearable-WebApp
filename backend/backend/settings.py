@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fireband'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,6 +89,8 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+STATIC_URL = '/static/'
 
 USE_I18N = True
 
