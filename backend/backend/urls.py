@@ -3,6 +3,6 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^fireband/', include('fireband.urls')),
+    url(r'^fireband/', include('fireband.urls', namespace='fireband')),
     url(r'^admin/', admin.site.urls)
 ]

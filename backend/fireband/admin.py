@@ -12,7 +12,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 class DeviceInline(admin.StackedInline):
     model = Device
-    extra = 3
+    extra = 1
 
 
 class StudentAdmin(admin.ModelAdmin):

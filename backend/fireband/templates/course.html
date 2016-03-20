@@ -74,6 +74,7 @@
                         {% for lesson in course.lesson_set.all %}
                             <h2>{{ lesson.title }}</h2>
                             {{ lesson.description }}
+                            <a href="{% url 'fireband:lesson' lesson.id %}">Start</a>
                         {% endfor %}
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
