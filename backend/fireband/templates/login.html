@@ -40,20 +40,27 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>{{ lesson.title }}</h1>
-                        {{ lesson.description }}
-                        {% if user.is_authenticated %}
-                            {% load fireband_tags %}
-                            {% is_student user as is_student %}
-                            {% if is_student %}
-                            <form action="{% url 'fireband:answer' lesson.id %}" method="post">
+                        <form action="{% url 'fireband:auth' %}" method="post">
                             {% csrf_token %}
-                            <label for="contents">Answer</label><textarea name="contents"></textarea>
-
-                            <input type="submit" value="Submit" />
-                            </form>
-                            {% endif %}
-                        {% endif %}
+                            <table>
+                                <tr>
+                                    <td><label for="username">Username</label></td>
+                                    <td><input type="text" name="username" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="password">Password</label></td>
+                                    <td><input type="password" name="password" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" name="send" value="login" /></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>{{ Errors }}</td>
+                                </tr>
+                            </table>
+                        </form>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>

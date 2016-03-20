@@ -2,32 +2,23 @@ from django.db import models
 from django.contrib.auth.models import User, Group
 
 
-# Create your models here.
-class Teacher(User):
-    class Meta:
-        verbose_name = 'Teacher'
-        verbose_name_plural = 'Teachers'
-
-
 
 class sClass(models.Model):
     name = models.CharField(max_length=20)
-    teacher = models.ForeignKey(Teacher)
+    teacher = models.ForeignKey(User)
     class Meta:
         verbose_name = 'Class'
         verbose_name_plural = 'Classes'
 
-
-
-class Student(User):
-    class_id = models.ForeignKey(sClass)
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     class Meta:
         verbose_name = 'Student'
         verbose_name_plural = 'Students'
 
 class Device(models.Model):
     student = models.ForeignKey(Student)
-    device_id = models.CharField(max_length=50, primary_key=True)
+    device_id = models.CharField(max_length=50)
     loaded_program = models.CharField(max_length=5000)
 
 class Course(models.Model):

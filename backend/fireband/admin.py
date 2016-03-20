@@ -16,10 +16,9 @@ class DeviceInline(admin.StackedInline):
 
 
 class StudentAdmin(admin.ModelAdmin):
-    inlines = [DeviceInline]
+    pass
 
 # Register your models here.
-admin.site.register(Teacher)
 admin.site.register(Student, StudentAdmin)
 admin.site.register(sClass)
 admin.site.register(Course, CourseAdmin)
